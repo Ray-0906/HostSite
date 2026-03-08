@@ -12,7 +12,7 @@
 
 .heroTitle {
     font-size: clamp(2rem, 4.5vw, 3rem);
-    font-weight: 800;
+    font-weight: 400;
     max-width: 680px;
     margin-bottom: 16px;
     letter-spacing: -0.02em;
@@ -39,7 +39,7 @@
 
 .sectionTitle {
     font-size: clamp(1.6rem, 3vw, 2.2rem);
-    font-weight: 800;
+    font-weight: 400;
     text-align: center;
     margin-bottom: 12px;
 }
@@ -74,7 +74,7 @@
 
 .statValue {
     font-size: clamp(1.8rem, 3vw, 2.5rem);
-    font-weight: 800;
+    font-weight: 400;
     color: #fff;
     font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
 }
@@ -112,7 +112,7 @@
 .stepNum {
     display: inline-block;
     font-size: 2rem;
-    font-weight: 800;
+    font-weight: 400;
     color: var(--primary-purple);
     margin-bottom: 16px;
     font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
@@ -120,7 +120,7 @@
 
 .stepCard h3 {
     font-size: 1.1rem;
-    font-weight: 700;
+    font-weight: 400;
     margin-bottom: 10px;
 }
 

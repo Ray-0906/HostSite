@@ -12,7 +12,7 @@
 
 .heroTitle {
     font-size: clamp(2rem, 4.5vw, 3.2rem);
-    font-weight: 800;
+    font-weight: 400;
     margin-bottom: 16px;
     max-width: 700px;
     letter-spacing: -0.02em;
@@ -54,7 +54,7 @@
 
 .sectionTitle {
     font-size: clamp(1.6rem, 3vw, 2.2rem);
-    font-weight: 800;
+    font-weight: 400;
     text-align: center;
     margin-bottom: 12px;
 }
@@ -112,7 +112,7 @@
 
 .solCard h3 {
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 400;
     margin-bottom: 8px;
     color: var(--text-dark);
 }
@@ -150,7 +150,7 @@
 
 .perfCard h3 {
     font-size: 1.1rem;
-    font-weight: 700;
+    font-weight: 400;
     margin-bottom: 10px;
     color: var(--text-dark);
 }
@@ -182,7 +182,7 @@
 
 .statValue {
     font-size: 1.3rem;
-    font-weight: 800;
+    font-weight: 400;
     color: #fff;
     font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
 }

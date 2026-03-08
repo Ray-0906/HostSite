@@ -1,42 +1,88 @@
-/* ===== Design Tokens (from hostazo.com original inline CSS) ===== */
+/* ===== Design Tokens — exact values from hostazo.com main.css & post-3400.css ===== */
 :root {
-  /* Primary colors - from hero/services inline CSS */
-  --primary-purple: #8c52ff;
+  /* Typography (from main.css :root) */
+  --tg-body-font-family: 'DM Sans', 'Inter', sans-serif;
+  --tg-heading-font-family: 'DM Sans', 'Inter', sans-serif;
+  --tg-body-font-size: 16px;
+  --tg-body-line-height: 1.6;
+  --tg-heading-line-height: 1.2;
+
+  /* Font Weights (from main.css) */
+  --tg-fw-extra-bold: 800;
+  --tg-fw-bold: 700;
+  --tg-fw-semi-bold: 600;
+  --tg-fw-medium: 500;
+  --tg-fw-regular: 400;
+  --tg-fw-light: 300;
+
+  /* Core Colors (from main.css :root) */
+  --tg-body-color: #404248;
+  --tg-heading-color: #131415;
+  --tg-theme-primary: #17BD54;
+  --tg-theme-primary-2: #3795FC;
+  --tg-theme-primary-3: #FF4C4C;
+  --tg-theme-secondary: #6F56DA;
+  --tg-color-blue-default: #644DC5;
+  --tg-color-dark-blue: #0E104B;
+
+  /* Brand purple — used across header, buttons, CTAs (from post-3400.css & post-1880.css) */
+  --primary-purple: #8C52FF;
   --primary-purple-dark: #2a1659;
   --primary-purple-light: #f8f5ff;
-  --primary-purple-hover: #6e3ddb;
-  --primary-purple-muted: #9D97BA;
-  /* Text colors */
-  --text-dark: #1a1a1a;
-  --text-body: #4a4a4a;
-  --text-muted: #718096;
-  --text-light: #777;
-  /* Accent colors */
-  --success-green: #22c55e;
+  --primary-purple-hover: #7340e0;
+
+  /* Yellows (from main.css) */
+  --tg-color-yellow-default: #FFD247;
+  --tg-color-yellow-light: #f8f7d7;
+
+  /* Greens (from main.css) */
+  --tg-color-green-default: #0FB04B;
+  --tg-color-dark-green: #003313;
+  --success-green: #17BD54;
   --success-green-light: #e6ffe6;
-  --green-dark: #008000;
-  --accent-gold: #AA9162;
-  --accent-blue: #3795FC;
-  --accent-red: #FF4C4C;
-  /* Background & borders */
+  --rating-green: #00B77F;
+
+  /* Text shortcuts */
+  --text-dark: #131415;
+  --text-body: #404248;
+  --text-muted: #767982;
+  --text-light: #B1B5BF;
+
+  /* Backgrounds (from main.css & post-3400.css) */
   --white: #FFFFFF;
-  --bg-light: #f0f7ff;
-  --bg-lavender: #f5f0ff;
+  --bg-light: #F9FAFB;
+  --bg-light-blue: #F9FAFF;
+  --bg-lavender: #eeebff;
   --bg-gray: #F0F1F3;
   --bg-gray-light: #F7F7F7;
-  --border-light: #ece7f5;
-  --border-2: #e2e8f0;
-  --border-3: #ebebeb;
+  --bg-gray-2: #F5F7F9;
+  --bg-gray-3: #F0F2F6;
+  --bg-gray-4: #F3F1FF;
+  --bg-alice-blue: #ecf5ff;
+
+  /* Borders (from main.css) */
+  --border-light: #f0f0f0;
+  --border-2: #d9dfe5;
+  --border-3: #EEF2F6;
+  --border-4: #E1E6F0;
+  --border-5: #E8E8E8;
+
   /* Shadows */
   --shadow-light: rgba(0, 0, 0, 0.05);
   --shadow-medium: rgba(0, 0, 0, 0.1);
   --shadow-purple: rgba(140, 82, 255, 0.15);
-  /* Layout */
+
+  /* Accent aliases */
+  --accent-blue: #3795FC;
+  --accent-red: #FF4C4C;
+  --accent-gold: #AA9162;
+
+  /* Layout (from main.css container) */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
   --radius-xl: 24px;
-  --container-max: 1300px;
+  --container-max: 1350px;
   --nav-height: 72px;
 }
 
@@ -54,12 +100,12 @@ html {
 }
 
 body {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
-  color: var(--text-body);
+  font-family: var(--tg-body-font-family);
+  font-size: var(--tg-body-font-size);
+  color: var(--tg-body-color);
   background-color: var(--white);
-  line-height: 1.6;
-  font-weight: 400;
+  line-height: var(--tg-body-line-height);
+  font-weight: var(--tg-fw-regular);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -71,10 +117,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 600;
-  line-height: 1.2;
-  color: var(--text-dark);
+  font-family: var(--tg-heading-font-family);
+  font-weight: var(--tg-fw-regular);
+  line-height: var(--tg-heading-line-height);
+  color: var(--tg-heading-color);
 }
 
 a {
@@ -104,12 +150,12 @@ ol {
 .container {
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 15px;
   width: 100%;
 }
 
 .section {
-  padding: 80px 0;
+  padding: 120px 0;
 }
 
 .section-light {
@@ -127,17 +173,17 @@ ol {
 
 /* ===== Typography ===== */
 .heading-xl {
-  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-size: clamp(2rem, 4vw, 40px);
   letter-spacing: -0.02em;
 }
 
 .heading-lg {
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-size: clamp(1.75rem, 3vw, 36px);
   letter-spacing: -0.01em;
 }
 
 .heading-md {
-  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-size: clamp(1.25rem, 2vw, 31px);
 }
 
 .heading-sm {
@@ -146,7 +192,7 @@ ol {
 
 .text-body {
   font-size: 1rem;
-  color: var(--text-body);
+  color: var(--tg-body-color);
   line-height: 1.7;
 }
 
@@ -157,7 +203,7 @@ ol {
 
 .text-label {
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: var(--tg-fw-medium);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: var(--text-muted);
@@ -169,10 +215,10 @@ ol {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  border-radius: var(--radius-md);
-  padding: 12px 28px;
+  font-weight: var(--tg-fw-medium);
+  font-size: 16px;
+  border-radius: var(--radius-sm);
+  padding: 12px 20px;
   transition: all 0.3s ease;
   white-space: nowrap;
 }
@@ -260,23 +306,61 @@ ol {
   transform: translateY(0);
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
+/* ===== Section subtitle badge (from main.css .sub-title) ===== */
+.sub-title {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: var(--tg-fw-medium);
+  border: 1px solid var(--border-2);
+  padding: 8px 15px;
+  border-radius: 24px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+}
+
+/* ===== Responsive (from main.css breakpoints) ===== */
+@media (max-width: 1199.98px) {
   .container {
-    padding: 0 16px;
+    max-width: 960px;
   }
 
   .section {
-    padding: 48px 0;
+    padding: 100px 0;
+  }
+
+  .heading-xl {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .container {
+    max-width: 720px;
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .heading-xl {
+    font-size: 32px;
   }
 }
 
 @media (max-width: 480px) {
-  .container {
-    padding: 0 12px;
-  }
-
   .section {
-    padding: 36px 0;
+    padding: 48px 0;
   }
 }

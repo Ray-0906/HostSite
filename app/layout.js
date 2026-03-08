@@ -1,4 +1,4 @@
-import { DM_Sans } from 'next/font/google';
+import { DM_Sans, Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -9,6 +9,14 @@ const dmSans = DM_Sans({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700', '800'],
   display: 'swap',
+  variable: '--font-dm-sans',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  display: 'swap',
+  variable: '--font-inter',
 });
 
 export const metadata = {
@@ -18,7 +26,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={dmSans.className}>
+    <html lang="en" className={`${dmSans.variable} ${inter.variable} ${dmSans.className}`}>
       <body suppressHydrationWarning>
         <RouteTransitionEffects />
         <AnnouncementBar />

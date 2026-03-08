@@ -29,13 +29,13 @@
     padding: 4px 16px;
     border-radius: 50px;
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 500;
     white-space: nowrap;
 }
 
 .name {
     font-size: 1.25rem;
-    font-weight: 700;
+    font-weight: 400;
     color: var(--text-dark);
     margin-bottom: 4px;
 }
@@ -55,13 +55,13 @@
 
 .currency {
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 400;
     color: var(--text-dark);
 }
 
 .price {
     font-size: 3rem;
-    font-weight: 800;
+    font-weight: 400;
     color: var(--text-dark);
     line-height: 1;
     font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
@@ -81,7 +81,7 @@
     background: var(--primary-purple);
     color: #fff;
     border-radius: var(--radius-md);
-    font-weight: 600;
+    font-weight: 500;
     font-size: 0.95rem;
     transition: all 0.3s ease;
     margin-bottom: 12px;

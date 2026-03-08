@@ -95,7 +95,7 @@
     background: var(--primary-purple);
     color: #fff;
     border-radius: 50px;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 0.875rem;
     transition: all 0.3s ease;
     flex-shrink: 0;
@@ -182,7 +182,7 @@
 
 .dropdownLabel {
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 500;
     text-transform: uppercase;
     color: var(--text-muted);
     letter-spacing: 0.5px;
@@ -221,7 +221,7 @@
 
 .dropdownTitle {
     display: block;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 0.9rem;
     color: var(--text-dark);
 }
@@ -255,7 +255,7 @@
 
 .offerBadge {
     font-size: 0.7rem;
-    font-weight: 600;
+    font-weight: 500;
     text-transform: uppercase;
     color: var(--primary-purple);
     letter-spacing: 0.5px;
@@ -263,7 +263,7 @@
 
 .wpOffer h4 {
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 400;
     margin: 8px 0;
     color: var(--text-dark);
 }
@@ -277,7 +277,7 @@
 
 .offerBtn {
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--success-green);
     transition: color 0.2s ease;
 }
@@ -377,7 +377,7 @@
     background: var(--primary-purple);
     color: #fff;
     border-radius: 50px;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1rem;
 }
 
