@@ -1,0 +1,158 @@
+.section {
+    padding: 60px 0;
+}
+
+.label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1.5fr 0.5fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.servicesList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.serviceItem {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px 22px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 4px 14px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.serviceItem:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 7px 24px var(--shadow-medium);
+}
+
+.icon {
+    width: 42px;
+    height: 42px;
+    background: var(--primary-purple-light);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.serviceTitle {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+}
+
+.serviceDesc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+/* Domain card */
+.domainCard {
+    position: sticky;
+    top: 100px;
+}
+
+.domainInner {
+    background-color: #2A1659;
+    border-radius: 14px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 10px 28px var(--shadow-medium);
+}
+
+.checkIcon {
+    margin-bottom: 12px;
+    opacity: 0.9;
+}
+
+.domainName {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 14px;
+}
+
+.tldChips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.chip {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 7px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    opacity: 0.85;
+}
+
+.domainBtn {
+    display: inline-block;
+    background: #fff;
+    color: var(--text-dark);
+    padding: 11px 26px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border: 1px solid var(--text-dark);
+    transition: all 0.3s ease;
+}
+
+.domainBtn:hover {
+    background: var(--text-dark);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .domainCard {
+        position: relative;
+        top: 0;
+        order: -1;
+    }
+
+    .servicesList {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    .servicesList {
+        grid-template-columns: 1fr;
+    }
+
+    .serviceItem {
+        padding: 14px 16px;
+    }
+}

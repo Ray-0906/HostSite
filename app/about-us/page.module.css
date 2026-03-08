@@ -1,0 +1,188 @@
+.hero {
+    padding: 80px 0 60px;
+    background: linear-gradient(180deg, #EDE9FE 0%, #F3F0FF 40%, #F8FAFC 100%);
+    text-align: center;
+}
+
+.heroContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heroTitle {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 800;
+    max-width: 680px;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.heroSub {
+    font-size: 1.05rem;
+    color: var(--text-body);
+    max-width: 580px;
+    margin-bottom: 28px;
+    line-height: 1.7;
+}
+
+/* Mission */
+.mission {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.missionContent {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.sectionTitle {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.sectionSub {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--text-body);
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+}
+
+/* Stats */
+.statsSection {
+    padding: 60px 0;
+    background: var(--primary-purple-dark);
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    text-align: center;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.statValue {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 800;
+    color: #fff;
+    font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
+}
+
+.statLabel {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Steps */
+.stepsSection {
+    padding: 80px 0;
+}
+
+.stepsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 16px;
+}
+
+.stepCard {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    border: 1px solid var(--border-light);
+    transition: transform 0.3s ease;
+}
+
+.stepCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+}
+
+.stepNum {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary-purple);
+    margin-bottom: 16px;
+    font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
+}
+
+.stepCard h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.stepCard p {
+    font-size: 0.9rem;
+    color: var(--text-body);
+    line-height: 1.6;
+}
+
+/* Business */
+.bizSection {
+    padding: 60px 0 80px;
+    background: var(--bg-light);
+}
+
+.bizContent {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.bizCard {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    border: 1px solid var(--border-light);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.bizItem {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.bizItem strong {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+}
+
+.bizItem span {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .statsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stepsGrid {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+        margin: 16px auto 0;
+    }
+
+    .bizCard {
+        grid-template-columns: 1fr;
+    }
+}

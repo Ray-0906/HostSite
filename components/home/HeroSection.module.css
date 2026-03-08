@@ -1,0 +1,490 @@
+.hero {
+    position: relative;
+    border-radius: 20px;
+    padding: 50px 20px;
+    background: #FFFFFF;
+    overflow: hidden;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+/* ===== Left Card (Light Purple BG) ===== */
+.heroCard {
+    background-color: var(--primary-purple-light);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+    position: relative;
+    overflow: hidden;
+    min-height: 480px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.heroCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(140, 82, 255, 0.08);
+}
+
+/* Left side text */
+.textContent {
+    flex: 1.2;
+    min-width: 250px;
+    z-index: 10;
+}
+
+.title {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: var(--primary-purple);
+}
+
+.subtitle {
+    font-size: 1.05rem;
+    color: #4a4a4a;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    max-width: 400px;
+}
+
+.priceRow {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 30px;
+}
+
+.currentPrice {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-right: 12px;
+}
+
+.regularPrice {
+    font-size: 0.9rem;
+    color: #777;
+    text-decoration: line-through;
+}
+
+.ctaBtn {
+    background-color: var(--text-dark);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.ctaBtn:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+/* Right side visual (browser mockup) */
+.visualContent {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 320px;
+    overflow: visible;
+}
+
+.browserMockup {
+    width: 100%;
+    max-width: 440px;
+    aspect-ratio: 16 / 10;
+    border: 1px solid #ebebeb;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 2;
+    padding-top: 26px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.browserBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 26px;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    gap: 5px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.dotRed {
+    background-color: #ff605c;
+}
+
+.dotYellow {
+    background-color: #ffbd44;
+}
+
+.dotGreen {
+    background-color: #00ca4e;
+}
+
+.urlBar {
+    flex: 1;
+    height: 14px;
+    background-color: #ebebeb;
+    border-radius: 5px;
+    margin-left: 8px;
+}
+
+.browserImage {
+    width: 100%;
+    height: calc(100% - 26px);
+    position: absolute;
+    top: 26px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+}
+
+/* Floating Badges */
+.badge {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    padding: 10px 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+    text-align: left;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    white-space: nowrap;
+}
+
+.badge:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.badgeIcon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background-color: #fff;
+    border: 1px solid var(--primary-purple);
+    flex-shrink: 0;
+}
+
+.badgeValue {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.2;
+}
+
+.badgeLabel {
+    font-size: 0.75rem;
+    color: #777;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+.uptimeBadge {
+    top: 12%;
+    right: -5%;
+}
+
+.speedBadge {
+    bottom: 12%;
+    left: -8%;
+}
+
+.supportBadge {
+    bottom: 8%;
+    right: -5%;
+}
+
+/* ===== Right Card (Dark Purple) ===== */
+.domainCard {
+    background-color: var(--primary-purple-dark);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 480px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.domainCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.domainTitle {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+    margin-bottom: 25px;
+    z-index: 2;
+}
+
+.domainMockup {
+    width: 100%;
+    max-width: 280px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin: auto 0 30px 0;
+    z-index: 2;
+}
+
+.domainBrowserBar {
+    height: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.domainSearchBody {
+    padding: 20px 15px;
+}
+
+.domainInput {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.domainText {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #fff;
+    opacity: 0.8;
+}
+
+.domainCheck {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--primary-purple);
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.tldGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.tldTag {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    opacity: 0.9;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.tldTag:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    opacity: 1;
+}
+
+.domainBtn {
+    background-color: #fff;
+    color: #6a3bc9;
+    padding: 14px 28px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+    margin-top: auto;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.domainBtn:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+/* Background shapes for domain card */
+.bgShape1 {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    border-radius: 50%;
+    top: -30px;
+    left: -40px;
+    opacity: 0.15;
+    filter: blur(50px);
+    z-index: 1;
+}
+
+.bgShape2 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 50%;
+    bottom: -50px;
+    right: -60px;
+    opacity: 0.1;
+    filter: blur(60px);
+    z-index: 1;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 991px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .heroCard {
+        flex-direction: column;
+        padding: 30px;
+        min-height: unset;
+    }
+
+    .textContent {
+        text-align: center;
+    }
+
+    .subtitle {
+        max-width: 100%;
+    }
+
+    .priceRow {
+        justify-content: center;
+    }
+
+    .ctaBtn {
+        margin: 0 auto;
+    }
+
+    .visualContent {
+        margin-top: 50px;
+        width: 100%;
+        display: block;
+        min-height: 250px;
+    }
+
+    .browserMockup {
+        width: 90%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .uptimeBadge {
+        top: 5%;
+        right: 0;
+    }
+
+    .speedBadge {
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%) !important;
+    }
+
+    .supportBadge {
+        bottom: 5%;
+        right: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero {
+        padding: 30px 15px;
+    }
+
+    .title {
+        font-size: 1.6rem;
+    }
+
+    .domainTitle {
+        font-size: 1.3rem;
+    }
+
+    .heroCard {
+        padding: 25px;
+    }
+
+    .domainCard {
+        padding: 30px;
+        min-height: unset;
+    }
+}

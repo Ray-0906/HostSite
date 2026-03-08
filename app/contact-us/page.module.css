@@ -1,0 +1,212 @@
+.hero {
+    padding: 80px 0 60px;
+    background: linear-gradient(180deg, #EDE9FE 0%, #F3F0FF 40%, #F8FAFC 100%);
+    text-align: center;
+}
+
+.heroContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heroTitle {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.heroSub {
+    font-size: 1.1rem;
+    color: var(--text-body);
+    max-width: 480px;
+}
+
+/* Contact Cards */
+.contactCards {
+    padding: 60px 0;
+}
+
+.cardsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.contactCard {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    border: 1px solid var(--border-light);
+    transition: transform 0.3s ease;
+}
+
+.contactCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+}
+
+.contactCard h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.contactCard p {
+    font-size: 0.85rem;
+    color: var(--text-body);
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.email {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-purple);
+}
+
+/* Help */
+.helpSection {
+    padding: 60px 0;
+    background: var(--bg-light);
+}
+
+.sectionTitle {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.catGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.catCard {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    border: 1px solid var(--border-light);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.catCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.catIcon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.catCard h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.catCard p {
+    font-size: 0.82rem;
+    color: var(--text-body);
+    line-height: 1.5;
+}
+
+/* Form */
+.formSection {
+    padding: 80px 0;
+}
+
+.formContainer {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.field label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.field input,
+.field textarea {
+    padding: 12px 16px;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    font-family: inherit;
+    color: var(--text-dark);
+    transition: border-color 0.2s ease;
+    outline: none;
+    background: #fff;
+}
+
+.field input:focus,
+.field textarea:focus {
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 0 3px var(--shadow-purple);
+}
+
+.field textarea {
+    resize: vertical;
+}
+
+.success {
+    text-align: center;
+    padding: 48px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.success h3 {
+    font-size: 1.3rem;
+    color: var(--success-green);
+}
+
+.success p {
+    color: var(--text-body);
+}
+
+@media (max-width: 768px) {
+
+    .cardsGrid,
+    .catGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .formRow {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .cardsGrid,
+    .catGrid {
+        grid-template-columns: 1fr;
+    }
+}

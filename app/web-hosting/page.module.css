@@ -1,0 +1,230 @@
+.hero {
+    padding: 80px 0 60px;
+    background: linear-gradient(180deg, #EDE9FE 0%, #F3F0FF 40%, #F8FAFC 100%);
+    text-align: center;
+}
+
+.heroContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heroTitle {
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-weight: 800;
+    margin-bottom: 16px;
+    max-width: 700px;
+    letter-spacing: -0.02em;
+}
+
+.heroSub {
+    font-size: 1.05rem;
+    color: var(--text-body);
+    max-width: 580px;
+    margin-bottom: 28px;
+    line-height: 1.6;
+}
+
+.heroBadges {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    background: #fff;
+    padding: 8px 18px;
+    border-radius: 50px;
+    border: 1px solid var(--border-light);
+}
+
+/* Pricing */
+.pricing {
+    padding: 80px 0;
+}
+
+.sectionTitle {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.sectionSub {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 550px;
+    margin: 0 auto 48px;
+}
+
+.plansGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+/* Solutions */
+.solutions {
+    padding: 80px 0;
+    background: var(--bg-light);
+}
+
+.solGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.solCard {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    border: 1px solid var(--border-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.solCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+}
+
+.solIcon {
+    width: 48px;
+    height: 48px;
+    background: var(--primary-purple-light);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.solCard h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.solCard p {
+    font-size: 0.85rem;
+    color: var(--text-body);
+    line-height: 1.6;
+}
+
+/* Performance */
+.perf {
+    padding: 80px 0;
+}
+
+.perfGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.perfCard {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    border: 1px solid var(--border-light);
+    transition: transform 0.3s ease;
+}
+
+.perfCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.perfCard h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.perfCard p {
+    font-size: 0.9rem;
+    color: var(--text-body);
+    line-height: 1.6;
+}
+
+/* Stats */
+.statsSection {
+    padding: 60px 0;
+    background: var(--primary-purple-dark);
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    text-align: center;
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.statValue {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #fff;
+    font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
+}
+
+.statLabel {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* FAQ */
+.faqSection {
+    padding: 80px 0;
+}
+
+.faqWrap {
+    max-width: 720px;
+    margin: 32px auto 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+
+    .plansGrid,
+    .solGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .statsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .plansGrid,
+    .solGrid,
+    .perfGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .statsGrid {
+        grid-template-columns: 1fr;
+    }
+}

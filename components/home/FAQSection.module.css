@@ -1,0 +1,51 @@
+.section {
+    padding: 80px 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 48px;
+    align-items: start;
+}
+
+.heading {
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.sub {
+    font-size: 0.95rem;
+    color: var(--text-body);
+    line-height: 1.7;
+    margin-bottom: 32px;
+}
+
+.helpCard {
+    background: var(--primary-purple-light);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    border: 1px solid rgba(111, 86, 218, 0.1);
+}
+
+.helpCard h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.helpCard p {
+    font-size: 0.85rem;
+    color: var(--text-body);
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
