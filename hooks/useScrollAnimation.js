@@ -8,48 +8,41 @@ export function useScrollAnimation(options = {}) {
     const el = ref.current;
     if (!el) return;
 
-    let ctx;
-    const initGSAP = async () => {
-      const gsap = (await import('gsap')).default;
-      const { ScrollTrigger } = await import('gsap/ScrollTrigger');
-      gsap.registerPlugin(ScrollTrigger);
+    const y = options.y ?? 40;
+    const duration = options.duration ?? 0.8;
+    const stagger = options.stagger ?? 0.1;
+    const delay = options.delay ?? 0;
 
-      ctx = gsap.context(() => {
-        const elements = el.querySelectorAll('.animate-on-scroll');
-        if (elements.length === 0) {
-          gsap.from(el, {
-            y: options.y ?? 40,
-            opacity: 0,
-            duration: options.duration ?? 0.8,
-            ease: options.ease ?? 'power2.out',
-            delay: options.delay ?? 0,
-            scrollTrigger: {
-              trigger: el,
-              start: options.start ?? 'top 85%',
-              toggleActions: 'play none none none',
-            },
-          });
-        } else {
-          elements.forEach((element, i) => {
-            gsap.from(element, {
-              y: options.y ?? 40,
-              opacity: 0,
-              duration: options.duration ?? 0.8,
-              ease: options.ease ?? 'power2.out',
-              delay: (options.stagger ?? 0.1) * i,
-              scrollTrigger: {
-                trigger: element,
-                start: options.start ?? 'top 85%',
-                toggleActions: 'play none none none',
-              },
-            });
-          });
-        }
-      }, el);
-    };
+    const targets = el.querySelectorAll('.animate-on-scroll');
+    const elements = targets.length > 0 ? Array.from(targets) : [el];
 
-    initGSAP();
-    return () => ctx?.revert();
+    // Set initial hidden state
+    elements.forEach((element, i) => {
+      element.style.opacity = '0';
+      element.style.transform = `translateY(${y}px)`;
+      element.style.transition = `opacity ${duration}s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform ${duration}s cubic-bezier(0.25, 0.46, 0.45, 0.94)`;
+      element.style.transitionDelay = targets.length > 0
+        ? `${stagger * i}s`
+        : `${delay}s`;
+    });
+
+    // Trigger animation when element scrolls into view
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: '0px 0px -15% 0px' }
+    );
+
+    elements.forEach((element) => observer.observe(element));
+
+    return () => observer.disconnect();
   }, [options.y, options.duration, options.ease, options.delay, options.start, options.stagger]);
 
   return ref;

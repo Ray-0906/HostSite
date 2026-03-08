@@ -3,6 +3,7 @@ import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import AnnouncementBar from '@/components/layout/AnnouncementBar';
+import RouteTransitionEffects from '@/components/layout/RouteTransitionEffects';
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -18,7 +19,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={dmSans.className}>
-      <body>
+      <body suppressHydrationWarning>
+        <RouteTransitionEffects />
         <AnnouncementBar />
         <Navbar />
         <main>{children}</main>

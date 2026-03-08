@@ -1,5 +1,3 @@
-@import "tailwindcss";
-
 /* ===== Design Tokens (from hostazo.com original inline CSS) ===== */
 :root {
   /* Primary colors - from hero/services inline CSS */
@@ -52,7 +50,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth — removed: causes 2-3s delay on programmatic scrollTo during client-side navigation */
 }
 
 body {

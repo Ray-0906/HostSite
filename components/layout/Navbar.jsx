@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { navItems } from '@/data/navigation';
 import styles from './Navbar.module.css';
 
@@ -12,6 +12,21 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const navRef = useRef(null);
   const pathname = usePathname();
+  const router = useRouter();
+
+  // Prefetch all nav routes once the browser is idle so first-click is instant
+  useEffect(() => {
+    const id = requestIdleCallback(() => {
+      navItems.forEach((item) => {
+        if (item.href) router.prefetch(item.href);
+        item.items?.forEach((sub) => {
+          if (sub.href) router.prefetch(sub.href);
+        });
+      });
+      router.prefetch('/contact-us');
+    });
+    return () => cancelIdleCallback(id);
+  }, []); // once on mount
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -55,6 +70,7 @@ export default function Navbar() {
             >
               {item.hasDropdown ? (
                 <button
+                  type="button"
                   className={`${styles.navItem} ${activeDropdown === item.label ? styles.active : ''}`}
                   onClick={() => toggleDropdown(item.label)}
                 >
@@ -139,7 +155,7 @@ export default function Navbar() {
           Log In
         </Link>
 
-        <button className={styles.hamburger} onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
+        <button type="button" className={styles.hamburger} onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
           <span className={`${styles.hamLine} ${mobileOpen ? styles.open : ''}`}></span>
           <span className={`${styles.hamLine} ${mobileOpen ? styles.open : ''}`}></span>
           <span className={`${styles.hamLine} ${mobileOpen ? styles.open : ''}`}></span>
@@ -152,7 +168,7 @@ export default function Navbar() {
             <div key={item.label} className={styles.mobileItem}>
               {item.hasDropdown ? (
                 <>
-                  <button className={styles.mobileLink} onClick={() => toggleDropdown(item.label)}>
+                  <button type="button" className={styles.mobileLink} onClick={() => toggleDropdown(item.label)}>
                     {item.label}
                     <svg width="12" height="12" viewBox="0 0 12 12" className={`${styles.chevron} ${activeDropdown === item.label ? styles.rotated : ''}`}>
                       <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
