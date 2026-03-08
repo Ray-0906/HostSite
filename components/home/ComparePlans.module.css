@@ -1,0 +1,126 @@
+.section {
+    padding: 120px 0;
+}
+
+.heading {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.sub {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 48px;
+}
+
+.tableWrap {
+    overflow-x: auto;
+}
+
+.table {
+    min-width: 900px;
+    width: 100%;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 280px repeat(4, 1fr);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.headerRow {
+    background: var(--bg-light);
+    border-radius: 12px 12px 0 0;
+    border-bottom: 2px solid var(--border-2);
+    position: sticky;
+    top: var(--nav-height);
+    z-index: 5;
+}
+
+.labelCol {
+    padding: 16px 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+}
+
+.planCol {
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--tg-body-color);
+    gap: 4px;
+}
+
+.popularCol {
+    background: rgba(140, 82, 255, 0.04);
+}
+
+.planName {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.planPrice {
+    font-size: 0.85rem;
+    color: var(--primary-purple);
+    font-weight: 500;
+}
+
+/* Category headers */
+.category {
+    border-bottom: 1px solid var(--border-light);
+}
+
+.catHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    background: var(--bg-gray-light);
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s ease;
+}
+
+.catHeader:hover {
+    background: var(--bg-gray);
+}
+
+.chevron {
+    transition: transform 0.3s ease;
+}
+
+.catOpen .chevron {
+    transform: rotate(180deg);
+}
+
+.catBody .row:last-child {
+    border-bottom: none;
+}
+
+.catBody .row:hover {
+    background: rgba(140, 82, 255, 0.02);
+}
+
+/* Hide on mobile */
+@media (max-width: 991px) {
+    .section {
+        display: none;
+    }
+}

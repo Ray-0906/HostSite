@@ -1,0 +1,240 @@
+.section {
+  padding: 80px 20px;
+  background: var(--bg-light-blue);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1.8fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Card 1 — High-speed (full-width top) */
+.cardHighSpeed {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background: linear-gradient(135deg, #6e3ddb 0%, #8c52ff 35%, #e9d5ff 50%, #8c52ff 65%, #6e3ddb 100%);
+  color: #fff;
+  padding: 40px 50px;
+}
+
+.highSpeedContent {
+  flex: 1;
+}
+
+.highSpeedTitle {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.highSpeedDesc {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.btnGetStarted {
+  display: inline-block;
+  background: #fff;
+  color: var(--primary-purple);
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btnGetStarted:hover {
+  background: #f3eeff;
+  transform: translateY(-1px);
+}
+
+.highSpeedImage {
+  flex-shrink: 0;
+}
+
+.boltImage {
+  width: 220px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Card 2 — Business Growth */
+.cardGrowth {
+  grid-column: 1 / 2;
+}
+
+.cardTitle {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.cardSubtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+.bulletList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+}
+
+.bulletList li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: var(--tg-body-color);
+  margin-bottom: 10px;
+}
+
+.progressBars {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.progressItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progressLabel {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  min-width: 140px;
+}
+
+.progressTrack {
+  flex: 1;
+  height: 8px;
+  background: var(--bg-gray);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 1s ease;
+}
+
+.progressGreen {
+  background: var(--success-green);
+}
+
+.progressPurple {
+  background: var(--primary-purple);
+}
+
+.progressValue {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  min-width: 36px;
+  text-align: right;
+}
+
+/* Card 3 — Infrastructure */
+.cardInfra {
+  grid-column: 2 / 3;
+  position: relative;
+  min-height: 360px;
+}
+
+.featureChips {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.featureChips li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--tg-body-color);
+  font-weight: 500;
+}
+
+.infraImageWrap {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  z-index: 2;
+}
+
+.infraImage {
+  width: 230px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cardHighSpeed {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+
+  .highSpeedTitle {
+    font-size: 1.6rem;
+  }
+
+  .boltImage {
+    width: 160px;
+  }
+
+  .cardInfra {
+    min-height: auto;
+    padding-bottom: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .highSpeedTitle {
+    font-size: 1.3rem;
+  }
+
+  .progressLabel {
+    min-width: 100px;
+    font-size: 0.65rem;
+  }
+}

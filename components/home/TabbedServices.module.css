@@ -1,0 +1,151 @@
+.section {
+  padding: 120px 0;
+  background: var(--white);
+}
+
+/* Tab navigation */
+.tabNav {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.tabBtn {
+  padding: 14px 28px;
+  border: 1px solid var(--border-2);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--tg-body-color);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tabBtn:hover {
+  border-color: var(--primary-purple);
+  color: var(--primary-purple);
+}
+
+.tabActive {
+  background: var(--primary-purple);
+  color: #fff;
+  border-color: var(--primary-purple);
+}
+
+.tabActive:hover {
+  color: #fff;
+}
+
+/* Tab content */
+.tabContent {
+  position: relative;
+}
+
+.tabPane {
+  display: none;
+}
+
+.tabPaneActive {
+  display: block;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.textCol {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.heading {
+  font-size: clamp(1.4rem, 2.5vw, 1.75rem);
+  font-weight: 400;
+  color: var(--text-dark);
+  line-height: 1.4;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding: 14px 32px;
+  background: var(--primary-purple);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.ctaBtn:hover {
+  background: var(--primary-purple-hover);
+  transform: translateY(-1px);
+}
+
+/* Image area */
+.imageCol {
+  display: flex;
+  justify-content: center;
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.shapeImg {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 80%;
+  height: auto;
+  z-index: 1;
+  object-fit: contain;
+}
+
+.thumbImg {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .imageWrap {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabBtn {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+}
