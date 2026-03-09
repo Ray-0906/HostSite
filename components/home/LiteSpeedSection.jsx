@@ -17,7 +17,7 @@ export default function LiteSpeedSection() {
           <h2 className={styles.heading}>
             Achieve faster load times with<br />
             LiteSpeed web server + LSCache
-          </h2>
+          </h2> 
           <ul className={styles.list}>
             {features.map((f, i) => (
               <li key={i} className={styles.item}>
@@ -32,7 +32,7 @@ export default function LiteSpeedSection() {
         </div>
         <div className={styles.imageWrap}>
           <Image
-            src="/images/litespeed-performance.png"
+            src="/images/Gemini_Generated_Image_jl6vxrjl6vxrjl6v.png"
             alt="Hostazo Performance Graph"
             width={600}
             height={400}

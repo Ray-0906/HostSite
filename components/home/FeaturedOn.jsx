@@ -19,8 +19,8 @@ export default function FeaturedOn() {
               <Image
                 src={logo.src}
                 alt={logo.alt}
-                width={160}
-                height={50}
+                width={250}
+                height={95}
                 className={styles.logo}
               />
             </div>

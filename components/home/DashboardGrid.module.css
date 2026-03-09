@@ -15,21 +15,37 @@
   background: var(--white);
   border-radius: 20px;
   padding: 30px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease;
+  box-shadow: 0 10px 30px -15px rgba(0,0,0,0.08),
+              0 4px 15px -10px rgba(0,0,0,0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 15px 40px -15px rgba(0,0,0,0.12),
+              0 8px 20px -10px rgba(0,0,0,0.06);
+}
+
+.cardTopIcon {
+  width: 24px;
+  height: 24px;
+  color: #8c52ff;
+  margin-bottom: 20px;
+  flex-shrink: 0;
 }
 
 /* Card 1 — High-speed (full-width top) */
 .cardHighSpeed {
   grid-column: 1 / -1;
   display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   gap: 40px;
   background: linear-gradient(135deg, #6e3ddb 0%, #8c52ff 35%, #e9d5ff 50%, #8c52ff 65%, #6e3ddb 100%);
   color: #fff;
@@ -87,7 +103,7 @@
 }
 
 .cardTitle {
-  font-size: 1.35rem;
+  font-size: 1.8rem;
   font-weight: 600;
   color: var(--text-dark);
   margin-bottom: 10px;
@@ -95,49 +111,94 @@
 
 .cardSubtitle {
   font-size: 0.9rem;
-  color: var(--text-muted);
-  margin-bottom: 18px;
+  color: #718096;
+  margin-bottom: 25px;
   line-height: 1.5;
 }
 
 .bulletList {
   list-style: none;
   padding: 0;
-  margin: 0 0 24px 0;
+  margin: 0 0 30px 0;
 }
 
 .bulletList li {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.875rem;
-  color: var(--tg-body-color);
-  margin-bottom: 10px;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: #4a5568;
+  margin-bottom: 12px;
+}
+
+.bulletList li::before {
+  content: '\2713';
+  color: #48bb78;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .progressBars {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 20px;
+  margin-top: auto;
+  padding-top: 20px;
 }
 
 .progressItem {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 
-.progressLabel {
-  font-size: 0.75rem;
+.progressBarIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.progressBarIcon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.progressBarIconGreen {
+  background-color: #e6f7f0;
+  color: #48bb78;
+}
+
+.progressBarIconPurple {
+  background-color: #f3eefc;
+  color: #8c52ff;
+}
+
+.progressBarContent {
+  width: 100%;
+}
+
+.progressBarLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.progressLabelText {
+  font-size: 0.9rem;
   font-weight: 500;
-  color: var(--text-muted);
-  min-width: 140px;
+  color: #4a5568;
 }
 
 .progressTrack {
   flex: 1;
   height: 8px;
-  background: var(--bg-gray);
+  background: #e2e8f0;
   border-radius: 4px;
   overflow: hidden;
 }
@@ -149,19 +210,11 @@
 }
 
 .progressGreen {
-  background: var(--success-green);
+  background: #48bb78;
 }
 
 .progressPurple {
-  background: var(--primary-purple);
-}
-
-.progressValue {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--text-dark);
-  min-width: 36px;
-  text-align: right;
+  background: #8c52ff;
 }
 
 /* Card 3 — Infrastructure */
@@ -175,24 +228,35 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin-top: auto;
+  padding-top: 20px;
+  position: relative;
+  z-index: 3;
 }
 
 .featureChips li {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 0.9rem;
-  color: var(--tg-body-color);
+  font-size: 0.95rem;
+  color: #4a5568;
   font-weight: 500;
+}
+
+.featureChips li svg {
+  width: 20px;
+  height: 20px;
+  color: #8c52ff;
+  flex-shrink: 0;
 }
 
 .infraImageWrap {
   position: absolute;
   bottom: 0;
-  right: 10px;
+  right: 0;
   z-index: 2;
 }
 
@@ -200,6 +264,7 @@
   width: 230px;
   height: auto;
   object-fit: contain;
+  filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
 }
 
 /* Responsive */
@@ -210,12 +275,17 @@
 
   .cardHighSpeed {
     flex-direction: column;
-    text-align: center;
     padding: 30px;
+    align-items: flex-start;
+    gap: 25px;
+  }
+
+  .highSpeedImage {
+    align-self: center;
   }
 
   .highSpeedTitle {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   .boltImage {
@@ -224,17 +294,137 @@
 
   .cardInfra {
     min-height: auto;
-    padding-bottom: 200px;
+    padding-bottom: 180px;
+  }
+
+  .cardGrowth {
+    grid-column: 1 / -1;
+  }
+
+  .cardInfra {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 50px 15px;
+  }
+
+  .card {
+    padding: 25px;
+  }
+
+  .cardHighSpeed {
+    padding: 25px;
+    gap: 20px;
+  }
+
+  .highSpeedTitle {
+    font-size: 1.6rem;
+  }
+
+  .highSpeedDesc {
+    font-size: 0.9rem;
+  }
+
+  .boltImage {
+    width: 140px;
+  }
+
+  .cardTitle {
+    font-size: 1.5rem;
+  }
+
+  .cardSubtitle {
+    font-size: 0.85rem;
+  }
+
+  .cardInfra {
+    padding-bottom: 160px;
+  }
+
+  .infraImage {
+    width: 180px;
   }
 }
 
 @media (max-width: 480px) {
+  .section {
+    padding: 40px 12px;
+  }
+
+  .card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .cardHighSpeed {
+    padding: 20px;
+    gap: 16px;
+    border-radius: 16px;
+  }
+
   .highSpeedTitle {
     font-size: 1.3rem;
   }
 
-  .progressLabel {
-    min-width: 100px;
-    font-size: 0.65rem;
+  .highSpeedDesc {
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+  }
+
+  .btnGetStarted {
+    padding: 10px 22px;
+    font-size: 0.85rem;
+  }
+
+  .boltImage {
+    width: 110px;
+  }
+
+  .cardTitle {
+    font-size: 1.3rem;
+  }
+
+  .cardSubtitle {
+    font-size: 0.8rem;
+  }
+
+  .bulletList li {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+
+  .progressLabelText {
+    font-size: 0.8rem;
+  }
+
+  .progressBarIcon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .progressBarIcon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .cardInfra {
+    padding-bottom: 140px;
+  }
+
+  .infraImage {
+    width: 140px;
+  }
+
+  .featureChips li {
+    font-size: 0.85rem;
+  }
+
+  .cardTopIcon {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 14px;
   }
 }

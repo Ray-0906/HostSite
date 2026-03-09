@@ -9,6 +9,9 @@ export default function DashboardGrid() {
         <div className={styles.grid}>
           {/* Card 1 — Full-width top, purple gradient */}
           <div className={`${styles.card} ${styles.cardHighSpeed}`}>
+            <svg className={styles.cardTopIcon} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" style={{ color: '#fff', opacity: 0.8 }}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+            </svg>
             <div className={styles.highSpeedContent}>
               <h3 className={styles.highSpeedTitle}>High-speed hosting</h3>
               <p className={styles.highSpeedDesc}>
@@ -32,44 +35,53 @@ export default function DashboardGrid() {
 
           {/* Card 2 — Bottom left */}
           <div className={`${styles.card} ${styles.cardGrowth}`}>
+            <svg className={styles.cardTopIcon} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+            </svg>
             <h3 className={styles.cardTitle}>Hosting that drives business growth</h3>
             <p className={styles.cardSubtitle}>
               Speed-optimized hosting improves engagement and search rankings.
             </p>
             <ul className={styles.bulletList}>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary-purple)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
-                Sub-2.5s LCP for instant user experience.
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary-purple)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
-                Near-zero CLS for a stable, professional site.
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary-purple)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
-                100ms INP for a responsive site
-              </li>
+              <li>Sub-2.5s LCP for instant user experience.</li>
+              <li>Near-zero CLS for a stable, professional site.</li>
+              <li>100ms INP for a responsive site</li>
             </ul>
             <div className={styles.progressBars}>
               <div className={styles.progressItem}>
-                <span className={styles.progressLabel}>Core Web Vitals Passed</span>
-                <div className={styles.progressTrack}>
-                  <div className={`${styles.progressBar} ${styles.progressGreen}`} style={{ width: '92%' }} />
+                <div className={`${styles.progressBarIcon} ${styles.progressBarIconGreen}`}>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="3" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                 </div>
-                <span className={styles.progressValue}>92%</span>
+                <div className={styles.progressBarContent}>
+                  <div className={styles.progressBarLabel}>
+                    <span className={styles.progressLabelText}>Core Web Vitals Passed</span>
+                  </div>
+                  <div className={styles.progressTrack}>
+                    <div className={`${styles.progressBar} ${styles.progressGreen}`} style={{ width: '92%' }} />
+                  </div>
+                </div>
               </div>
               <div className={styles.progressItem}>
-                <span className={styles.progressLabel}>27% Bounce Rate</span>
-                <div className={styles.progressTrack}>
-                  <div className={`${styles.progressBar} ${styles.progressPurple}`} style={{ width: '27%' }} />
+                <div className={`${styles.progressBarIcon} ${styles.progressBarIconPurple}`}>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="3" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" /></svg>
                 </div>
-                <span className={styles.progressValue}>27%</span>
+                <div className={styles.progressBarContent}>
+                  <div className={styles.progressBarLabel}>
+                    <span className={styles.progressLabelText}>27% Bounce Rate</span>
+                  </div>
+                  <div className={styles.progressTrack}>
+                    <div className={`${styles.progressBar} ${styles.progressPurple}`} style={{ width: '27%' }} />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
           {/* Card 3 — Bottom right */}
           <div className={`${styles.card} ${styles.cardInfra}`}>
+            <svg className={styles.cardTopIcon} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
             <h3 className={styles.cardTitle}>Secure &amp; Scalable Infrastructure</h3>
             <p className={styles.cardSubtitle}>
               Build on a foundation designed for resilience. Our infrastructure provides rock-solid
@@ -77,20 +89,20 @@ export default function DashboardGrid() {
             </p>
             <ul className={styles.featureChips}>
               <li>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary-purple)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 Advanced DDoS Protection
               </li>
               <li>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary-purple)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" />
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 Automatic Daily Backups
               </li>
               <li>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary-purple)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" />
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 Easy One-Click Scaling
               </li>

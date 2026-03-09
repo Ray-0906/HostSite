@@ -1,6 +1,7 @@
 'use client';
 import styles from './HostingCTACards.module.css';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const cards = [
   {
@@ -24,16 +25,23 @@ const cards = [
 function ShapeIcon({ type }) {
   if (type === 'wordpress') {
     return (
-      <svg className={styles.shapeIcon} width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--primary-purple)" strokeWidth="0.5" opacity="0.15">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-      </svg>
+      <Image
+        src="/images/features_shape_icon01.svg"
+        alt=""
+        width={120}
+        height={120}
+        className={styles.shapeIcon}
+      />
     );
   }
   return (
-    <svg className={styles.shapeIcon} width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--primary-purple)" strokeWidth="0.5" opacity="0.15">
-      <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
-    </svg>
+    <Image
+      src="/images/features_shape_icon02.svg"
+      alt=""
+      width={120}
+      height={120}
+      className={styles.shapeIcon}
+    />
   );
 }
 

@@ -12,13 +12,13 @@
 
 .content {
   flex: 1;
-  min-width: 300px;
+  min-width: 0;
   max-width: 550px;
 }
 
 .heading {
   font-size: clamp(1.6rem, 3vw, 2.375rem);
-  font-weight: 700;
+  font-weight: 500;
   color: #1a1a2e;
   line-height: 1.2;
   margin-bottom: 32px;
@@ -32,8 +32,9 @@
 
 .item {
   display: flex;
-  gap: 14px;
-  font-size: 1rem;
+  align-items: flex-start;
+  gap: 15px;
+  font-size: 16px;
   line-height: 1.5;
   margin-bottom: 20px;
   color: var(--tg-body-color);
@@ -46,31 +47,93 @@
 
 .imageWrap {
   flex: 1;
-  min-width: 300px;
+  min-width: 0;
   max-width: 650px;
   background: #f0f7ff;
   border-radius: 15px;
   padding: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 300px;
+  overflow: hidden;
 }
 
 .image {
-  width: 100%;
+  max-width: 100%;
   height: auto;
   border-radius: 10px;
   object-fit: cover;
 }
 
 @media (max-width: 991px) {
+  .section {
+    padding: 60px 15px;
+  }
+
   .grid {
     flex-direction: column;
+    gap: 30px;
   }
 
   .content,
   .imageWrap {
     max-width: 100%;
+    width: 100%;
+  }
+
+  .heading {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 50px 15px;
+  }
+
+  .heading {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  .imageWrap {
+    min-height: 220px;
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  .item {
+    font-size: 15px;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 40px 12px;
+  }
+
+  .heading {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .imageWrap {
+    min-height: 180px;
+    padding: 10px;
+  }
+
+  .item {
+    font-size: 14px;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .checkIcon {
+    width: 20px;
+    height: 20px;
   }
 }
